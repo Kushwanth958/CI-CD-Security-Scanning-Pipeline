@@ -2,6 +2,14 @@
 
 GitHub Actions + Gitleaks + Trivy. A small, reproducible security engineering lab that scans pull requests, tests scanner behavior, and documents response decisions.
 
+## Documentation
+
+- [Project report](docs/project-report.md) — design, verified results, and limitations
+- [Operations guide](docs/operations.md) — setup, troubleshooting, and maintenance
+- [File inventory](docs/file-inventory.md) — implementation and report locations
+- [Verification evidence](docs/evidence/verification-2026-11-11.json) — dated, source-linked results
+- [Triage runbook](docs/triage.md) and [credential rotation](docs/credential-rotation.md)
+
 ## What it does
 
 - Gitleaks scans complete Git history with built-in rules and fully redacted JSON output.

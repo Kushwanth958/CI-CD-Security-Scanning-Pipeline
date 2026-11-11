@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "record_type": "curated verification summary",
+  "verified_date": "2026-11-11",
+  "repository": "Kushwanth958/CI-CD-Security-Scanning-Pipeline",
+  "commit": "ecf3e6bd6cc3785b6b68310a6a0e207347d9ade8",
+  "workflow_run_id": 43076344167,
+  "workflow_url": "https://github.com/Kushwanth958/CI-CD-Security-Scanning-Pipeline/actions/runs/43076344167",
+  "job_id": 130717039879,
+  "conclusion": "success",
+  "versions": {
+    "gitleaks": "8.30.1",
+    "trivy": "0.76.1"
+  },
+  "unit_tests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "acceptance_tests": [
+    {
+      "case": "gitleaks-clean",
+      "passed": true,
+      "findings": 0
+    },
+    {
+      "case": "gitleaks-seeded",
+      "passed": true,
+      "findings": 1
+    },
+    {
+      "case": "gitleaks-scoped-allowlist",
+      "passed": true
+    },
+    {
+      "case": "gitleaks-allowlist-does-not-hide-other-secrets",
+      "passed": true
+    },
+    {
+      "case": "trivy-clean",
+      "passed": true,
+      "findings": 0
+    },
+    {
+      "case": "trivy-vulnerable",
+      "passed": true,
+      "findings": 22
+    }
+  ],
+  "notes": [
+    "This summary was transcribed from GitHub Actions logs; it is not a raw scanner report.",
+    "The dependency-free application has no package findings; vulnerability detection was validated using a temporary Django 2.2.0 manifest.",
+    "Finding counts depend on the vulnerability database at execution time."
+  ]
+}

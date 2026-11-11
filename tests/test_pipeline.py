@@ -30,13 +30,15 @@ class ScannerExitContract(unittest.TestCase):
     def test_all_scan_runs_both_and_preserves_failure(self):
         with tempfile.TemporaryDirectory() as directory:
             base = Path(directory)
+            (base / "scripts").mkdir()
+            (base / "scripts/scan.sh").write_text((ROOT / "scripts/scan.sh").read_text())
             for name in ["gitleaks", "trivy"]:
                 tool = base / name
                 tool.write_text("#!/bin/sh\necho " + name + " >> \"$CALL_LOG\"\nexit " + ("10" if name == "gitleaks" else "0") + "\n")
                 tool.chmod(0o755)
             import os
             env = dict(os.environ, PATH=str(base) + os.pathsep + os.environ["PATH"], CALL_LOG=str(base / "calls"))
-            result = subprocess.run(["bash", "scripts/scan.sh", "all"], cwd=ROOT, env=env)
+            result = subprocess.run(["bash", "scripts/scan.sh", "all"], cwd=base, env=env)
             self.assertNotEqual(result.returncode, 0)
             self.assertEqual((base / "calls").read_text().splitlines(), ["gitleaks", "trivy"])
 

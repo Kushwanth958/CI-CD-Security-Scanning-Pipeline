@@ -1,0 +1,3 @@
+title = "CI/CD security scanning"
+[extend]
+useDefault = true

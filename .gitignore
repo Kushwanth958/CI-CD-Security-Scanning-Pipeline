@@ -1,6 +1,0 @@
-reports/
-.tools/
-__pycache__/
-.venv/
-.env
-*.pyc

@@ -1,0 +1,1 @@
+# Dependency-free example application. Add pinned dependencies here.
